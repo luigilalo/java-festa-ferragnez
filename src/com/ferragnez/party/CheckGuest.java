@@ -17,7 +17,7 @@ public class CheckGuest {
 
           /* VERIFICO SE IL NOME UTENTE E' NELLA LISTA CON IL FOR
         for (int i = 0; i < guests.length; i++) {
-            if (userName.equals(guests[i])) {
+            if (userName.equalsIgnoreCase(guests[i])) {
                 userFound = true;
                 break;
             }
@@ -32,7 +32,7 @@ public class CheckGuest {
         // CON IL CICLO WHILE
         int i = 0;
         while (!userFound && i < guests.length) {
-            if (userName.equals(guests[i])) {
+            if (userName.equalsIgnoreCase(guests[i])) {
                 userFound = true;
                 System.out.println("Puoi entrare");
             }
@@ -41,5 +41,6 @@ public class CheckGuest {
         if (!userFound) {
             System.out.println("Non puoi entrare");
         }
+        scanner.close();
     }
 }
