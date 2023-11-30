@@ -14,7 +14,7 @@ public class CheckGuest {
         System.out.println("Qual è il tuo nome?");
         String userName = scanner.nextLine();
         boolean userFound = false;
-        // VERIFICO SE IL NOME UTENTE E' NELLA LISTA CON IL FOR
+          /* // VERIFICO SE IL NOME UTENTE E' NELLA LISTA CON IL FOR
         for (int i = 0; i < guests.length; i++) {
             if (userName.equals(guests[i])) {
                 userFound = true;
@@ -24,6 +24,20 @@ public class CheckGuest {
         if (userFound == true)
             System.out.println("Puoi entrare");
         else {
+            System.out.println("Non puoi entrare");
+        }
+
+        */
+        // CON IL CICLO WHILE
+        int i = 0;
+        while (userFound == false && i < guests.length) {
+            if (userName.equals(guests[i])) {
+                userFound = true;
+                System.out.println("Puoi entrare");
+            }
+            i++;
+        }
+        if (userFound == false) {
             System.out.println("Non puoi entrare");
         }
     }
